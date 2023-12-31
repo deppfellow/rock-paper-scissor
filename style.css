@@ -1,0 +1,41 @@
+body {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 5em auto;
+    border: 2px solid brown;
+}
+
+.title {
+    margin: .5em auto;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    /* height: 480px; */
+    background-color: silver;
+    margin: 0em 20em 1em;
+    border: 2px solid brown;
+}
+
+.player-side,
+.computer-side {
+    background-color: burlywood;
+    width: 15em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.2em 4em;
+}
+
+.player-side p,
+.computer-side p {
+    margin: 0 auto;
+    font-size: 8em;
+}
