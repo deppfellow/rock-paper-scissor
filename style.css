@@ -8,7 +8,7 @@ main {
     display: flex;
     flex-direction: column;
     margin: 5em auto;
-    border: 2px solid brown;
+    /* border: 2px solid brown; */
 }
 
 .title {
@@ -36,6 +36,22 @@ main {
 
 .player-side p,
 .computer-side p {
-    margin: 0 auto;
-    font-size: 8em;
+    margin: 0 auto 8px;
+    font-size: 6em;
+}
+
+.result-announcement {
+    margin: 1em auto;
+}
+
+.btn-selection {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin: 16px auto;
+}
+
+.btn-selection button {
+    padding: 1em 2em;
+    font-size: 1.2em;
 }
