@@ -40,15 +40,19 @@ function getComputerChoice() {
 
 function playRound(computerSelection, playerSelection) {
     const result = gameLogic(computerSelection, playerSelection)
+    let announcement = document.querySelector(".result-announcement")
 
     if (result == "Player win") {
-        console.log("Player +1 point.")
+        // console.log("Player +1 point.")    
+        announcement.textContent = "Player +1 point"
         return "win"
     } else if (result == "Comp win") {
-        console.log("Computer got a point")
+        // console.log("Computer got a point")
+        announcement.textContent = "Computer got a point"
         return "lose"
     } else if (result == "Tie") {
-        console.log("Tie. Nothing happen, keep going...")
+        // console.log("Tie. Nothing happen, keep going...")
+        announcement.textContent = "Tie. Nothing happen, keep going..."
         return "tie"
     }
 }
@@ -57,27 +61,27 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    while (playerScore < 5 && computerScore < 5) {
-        const buttons = document.querySelectorAll("button")
-        buttons.forEach((button) => {
-            button.addEventListener('click', () => {
-                const playerSelection = button.textContent.toLowerCase().trim()
-                const computerSelection = getComputerChoice()
+    const buttons = document.querySelectorAll("button")
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const playerSelection = button.textContent.toLowerCase().trim()
+            const computerSelection = getComputerChoice()
 
-                let result = playRound(computerSelection, playerSelection)
+            let result = playRound(computerSelection, playerSelection)
 
-                if (result == "win") {
-                    playerScore += 1
-                } else if (result == "lose") {
-                    computerScore += 1
-                }
-            })
+            if (result == "win") {
+                playerScore += 1
+
+                const playerScoreToShow = document.querySelector(".player-score")
+                playerScoreToShow.textContent = playerScore
+            } else if (result == "lose") {
+                computerScore += 1
+
+                const ComputerScoreToShow = document.querySelector(".computer-score")
+                ComputerScoreToShow.textContent = computerScore
+            }
         })
-    }
-
-    // const buttons = document.querySelectorAll("button")
-    // buttons.disabled = true
-    // console.log(playerChoice)
+    })
 }
 
 game()
