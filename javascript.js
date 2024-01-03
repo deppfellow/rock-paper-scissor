@@ -73,8 +73,11 @@ function checkRound() {
         }
 
         selectionBtn.forEach((button) => {
-            button.removeEventListener("click", getPlayerSelection)
+            button.disabled = true
         })
+        // selectionBtn.forEach((button) => {
+        //     button.removeEventListener("click", getPlayerSelection)
+        // })
     }
 }
 
