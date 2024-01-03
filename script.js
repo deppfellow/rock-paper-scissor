@@ -43,25 +43,23 @@ function playRound(computerSelection, playerSelection) {
     let announcement = document.querySelector(".result-announcement")
 
     if (result == "Player win") {
-        // console.log("Player +1 point.")    
         announcement.textContent = "Player +1 point"
         return "win"
     } else if (result == "Comp win") {
-        // console.log("Computer got a point")
         announcement.textContent = "Computer got a point"
         return "lose"
     } else if (result == "Tie") {
-        // console.log("Tie. Nothing happen, keep going...")
         announcement.textContent = "Tie. Nothing happen, keep going..."
         return "tie"
     }
 }
 
+const buttons = document.querySelectorAll("button")
+
 function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    const buttons = document.querySelectorAll("button")
     buttons.forEach((button) => {
         button.addEventListener('click', () => {
             const playerSelection = button.textContent.toLowerCase().trim()
